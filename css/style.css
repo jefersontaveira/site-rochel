@@ -1,0 +1,659 @@
+/* =========================================
+   VARIÁVEIS GERAIS E CORES
+   ========================================= */
+:root {
+  /* Tema Claro (Padrão) */
+  --bg-color: #ffffff;         /* Branco */
+  --text-color: #1a1a1a;       /* Preto suave para melhor leitura */
+  --primary-color: #7B2CBF;    /* Roxo Elegante */
+  --accent-color: #FFB703;     /* Ouro/Âmbar (Conversão/CTA) */
+  --header-bg: #f8f9fa;        /* Fundo do menu claro */
+  --transition-speed: 0.3s;
+}
+
+/* Tema Noturno (Ativado via JS) */
+[data-theme="dark"] {
+  --bg-color: #121212;         /* Preto profundo */
+  --text-color: #f8f9fa;       /* Branco suave */
+  --primary-color: #9D4EDD;    /* Roxo mais claro para contraste no escuro */
+  --header-bg: #1e1e1e;        /* Fundo do menu escuro */
+}
+
+/* =========================================
+   RESET E ESTILOS BÁSICOS
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================================
+   CABEÇALHO (HEADER)
+   ========================================= */
+header {
+  background-color: var(--header-bg);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  transition: color var(--transition-speed);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Botões do Menu */
+.lang-btn, .theme-btn {
+  background: none;
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all var(--transition-speed);
+}
+
+.lang-btn:hover, .theme-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* =========================================
+   SEÇÃO HOME (HERO) - LAYOUT DE DUAS COLUNAS
+   ========================================= */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    background: radial-gradient(circle at top right, rgba(123, 44, 191, 0.15), transparent);
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    opacity: 0.9;
+}
+
+/* Container da Imagem com Efeito Moderno */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image img {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    /* Sombras sofisticadas para dar profundidade */
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1), 
+                -20px -20px 60px rgba(123, 44, 191, 0.05);
+    transition: transform var(--transition-speed);
+}
+
+.hero-image:hover img {
+    transform: scale(1.02);
+}
+
+/* Botão de Alta Conversão */
+.cta-button {
+  background-color: var(--accent-color);
+  color: #000; /* Texto preto para contraste forte com o ouro */
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 183, 3, 0.6);
+}
+
+
+/* =========================================
+   SEÇÃO ABOUT
+   ========================================= */
+.about-section {
+    padding: 80px 5%;
+    background-color: var(--bg-color);
+}
+
+.about-section .container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    position: relative;
+    border: 5px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+.about-content {
+    flex: 1.5;
+}
+
+.about-content h2 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.about-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Badges de Destaque */
+.badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.badge {
+    background-color: rgba(123, 44, 191, 0.1);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid var(--primary-color);
+}
+
+/* =========================================
+   SEÇÃO PRICING
+   ========================================= */
+.pricing-section {
+    padding: 80px 5%;
+    background-color: var(--header-bg); /* Fundo ligeiramente diferente para separar as seções */
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.pricing-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Mantém os cards laterais centralizados verticalmente em relação ao principal */
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Estilo Base dos Cards */
+.card {
+    background-color: var(--bg-color);
+    border: 1px solid rgba(123, 44, 191, 0.2);
+    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    width: 320px;
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(123, 44, 191, 0.15);
+}
+
+/* Card em Destaque (Premium/Glow Effect) */
+.card.popular {
+    border: 2px solid var(--accent-color);
+    transform: scale(1.05); /* Levemente maior */
+    box-shadow: 0 0 25px rgba(255, 183, 3, 0.15); /* Brilho ouro suave */
+    z-index: 2;
+}
+
+.card.popular:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 183, 3, 0.3); /* Brilho intensifica no hover */
+}
+
+/* Fita de "Mais Popular" */
+.badge-popular {
+    position: absolute;
+    top: 25px;
+    right: -40px;
+    background-color: var(--accent-color);
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 8px 40px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Tipografia dos Cards */
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.price span {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-right: 2px;
+}
+
+.duration {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+/* Lista de Funcionalidades */
+.features {
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.features li {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.features li::before {
+    content: "✓";
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Botões dos Planos */
+.plan-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--text-color);
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.plan-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Botão do Card em Destaque */
+.card.popular .cta-btn {
+    background-color: var(--accent-color);
+    border: none;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+}
+
+.card.popular .cta-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(255, 183, 3, 0.6);
+    background-color: #ffc32e; /* Leve clareada no hover */
+}
+
+/* =========================================
+   SEÇÃO WHY CHOOSE ME
+   ========================================= */
+.why-section {
+    padding: 80px 5%;
+    background-color: var(--header-bg); /* Mantém a alternância de fundo para ritmo visual */
+}
+
+.why-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.why-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-card {
+    background-color: var(--bg-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border-top: 4px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(123, 44, 191, 0.1);
+}
+
+.why-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 183, 3, 0.15); /* Fundo sutil ouro */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.why-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.why-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* =========================================
+   SEÇÃO TESTIMONIALS (REVIEWS)
+   ========================================= */
+.testimonials-section {
+    padding: 80px 5%;
+    background-color: var(--bg-color); /* Alternando a cor de fundo da seção anterior */
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.testimonials-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: var(--header-bg);
+    border-left: 4px solid var(--accent-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.quote {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.student-avatar {
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-color);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.student-details h4 {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 2px;
+}
+
+.student-details span {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* =========================================
+   RODAPÉ (FOOTER)
+   ========================================= */
+.main-footer {
+    /* No Light Mode: Fundo Escuro e Texto Claro */
+    background-color: var(--text-color); 
+    color: var(--bg-color);             
+    padding: 60px 5% 20px;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Ajuste para o Tema Noturno */
+[data-theme="dark"] .main-footer {
+    background-color: #000; /* Fundo preto profundo */
+    /* No Dark Mode, var(--text-color) torna-se o branco suave */
+    color: var(--text-color); 
+    border-top: 1px solid rgba(123, 44, 191, 0.3);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand .logo {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand p {
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: inherit; /* Garante que herde a cor clara do footer pai */
+}
+
+/* Links e Itens de Lista do Rodapé */
+.social-links a, 
+.footer-links ul li a, 
+.footer-contact ul li {
+    color: inherit; /* Força a herança da cor do texto principal do footer */
+    opacity: 0.8;
+    text-decoration: none;
+    margin-top: 10px;;
+    transition: all var(--transition-speed);
+}
+
+.footer-contact ul li a:hover {
+    color: var(--accent-color);
+}
+
+.social-links a:hover, 
+.footer-links ul li a:hover {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+.footer-contact span {
+    color: var(--accent-color); /* Ícones permanecem em destaque Ouro */
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    color: inherit;
+}
