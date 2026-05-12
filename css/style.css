@@ -2,29 +2,20 @@
    VARIÁVEIS GERAIS E CORES
    ========================================= */
 :root {
-  /* Tema Claro (Padrão) */
-  --bg-color: #ffffff;         /* Branco */
-  --text-color: #1a1a1a;       /* Preto suave para melhor leitura */
-  --primary-color: #7B2CBF;    /* Roxo Elegante */
-  --accent-color: #FFB703;     /* Ouro/Âmbar (Conversão/CTA) */
-  --header-bg: #f8f9fa;        /* Fundo do menu claro */
-  --transition-speed: 0.3s;
+  --bg-color: #ffffff;         
+  --text-color: #1a1a1a;       
+  --primary-color: #7B2CBF;    
+  --accent-color: #FFB703;     
+  --header-bg: #f8f9fa;        
+  --transition-speed: 0.5s; /* Ajustado para 0.5s para suavidade ideal */
 }
 
 /* Tema Noturno (Ativado via JS) */
 [data-theme="dark"] {
-  --bg-color: #121212;         /* Preto profundo */
-  --text-color: #f8f9fa;       /* Branco suave */
-  --primary-color: #9D4EDD;    /* Roxo mais claro para contraste no escuro */
-  --header-bg: #1e1e1e;        /* Fundo do menu escuro */
-}
-
-[data-theme="dark"] .hero {
-    /* Troca a película branca por uma película escura (quase preta), 
-       mantendo a mesma imagem de fundo visível */
-    background-image: 
-        linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.88)),
-        url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1920&auto=format&fit=crop');
+  --bg-color: #121212;         
+  --text-color: #f8f9fa;       
+  --primary-color: #9D4EDD;    
+  --header-bg: #1e1e1e;        
 }
 
 /* =========================================
@@ -36,24 +27,16 @@
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
-  /* A mágica acontece aqui: afeta o site inteiro de uma vez */
+  /* Transição global unificada */
   transition: background-color var(--transition-speed) ease-in-out,
               color var(--transition-speed) ease-in-out,
               border-color var(--transition-speed) ease-in-out,
               box-shadow var(--transition-speed) ease-in-out;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 a {
@@ -93,7 +76,6 @@ header {
 
 .nav-links a {
   font-weight: 500;
-  transition: color var(--transition-speed);
 }
 
 .nav-links a:hover {
@@ -106,7 +88,6 @@ header {
   gap: 1rem;
 }
 
-/* Botões do Menu */
 .lang-btn, .theme-btn {
   background: none;
   border: 1px solid var(--primary-color);
@@ -115,7 +96,6 @@ header {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: all var(--transition-speed);
 }
 
 .lang-btn:hover, .theme-btn:hover {
@@ -124,7 +104,7 @@ header {
 }
 
 /* =========================================
-   SEÇÃO HOME (HERO) - ESTILO REFERÊNCIA (QUIZLET)
+   SEÇÃO HOME (HERO) - FUNDO COM TRANSIÇÃO PERFEITA
    ========================================= */
 .hero {
     min-height: 90vh;
@@ -132,9 +112,8 @@ header {
     align-items: center;
     padding: 0 5%;
     
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1920&auto=format&fit=crop');
+    /* APENAS a imagem de fundo, sem gradiente aqui */
+    background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1920&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,6 +122,7 @@ header {
     position: relative;
 }
 
+/* A Película de cor separada da foto */
 .hero::before {
     content: '';
     position: absolute;
@@ -150,13 +130,14 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.85); /* Película Clara */
     transition: background-color var(--transition-speed) ease-in-out;
     z-index: 1; 
 }
 
+/* Tema Noturno da Película */
 [data-theme="dark"] .hero::before {
-    background-color: rgba(18, 18, 18, 0.88);
+    background-color: rgba(18, 18, 18, 0.88); /* Película Escura */
 }
 
 .hero-container {
@@ -168,7 +149,7 @@ header {
     margin: 0 auto;
     gap: 4rem;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Mantém conteúdo acima da película */
 }
 
 /* Coluna da Esquerda (Texto) */
@@ -181,7 +162,6 @@ header {
     font-size: 3.8rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    /* Retornamos para o Roxo para dar contraste no fundo claro */
     color: var(--primary-color); 
     font-weight: 800;
 }
@@ -190,29 +170,27 @@ header {
     font-size: 1.2rem;
     margin-bottom: 2.5rem;
     max-width: 500px;
-    /* Retornamos para o texto escuro */
     color: var(--text-color); 
     line-height: 1.6;
     font-weight: 500;
 }
 
-/* Botão de Alta Conversão (Estilo Referência) */
+/* Botão de Alta Conversão */
 .cta-button {
-    background-color: var(--accent-color); /* Nosso Ouro/Âmbar */
+    background-color: var(--accent-color); 
     color: #000; 
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 8px; /* Bordas um pouco mais retas, como na foto */
+    border-radius: 8px; 
     border: none;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
     box-shadow: 0 4px 15px rgba(255, 183, 3, 0.2);
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    background-color: #ffc32e; /* Ouro um pouco mais claro no hover */
+    background-color: #ffc32e; 
 }
 
 /* Coluna da Direita (Imagem e Arco) */
@@ -220,12 +198,12 @@ header {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Garante que a foto fique alinhada à base */
+    align-items: flex-end; 
     position: relative;
-    height: 600px; /* Altura controlada para criar o arco atrás */
+    height: 600px; 
 }
 
-/* O Arco/Janela roxo atrás da Rochell (Puro CSS) */
+/* O Arco/Janela roxo atrás da foto */
 .hero-image::before {
     content: '';
     position: absolute;
@@ -234,25 +212,21 @@ header {
     transform: translateX(-50%);
     width: 80%;
     height: 90%;
-    /* Roxo principal da marca dando destaque */
     background-color: var(--primary-color); 
-    /* Cria o formato de arco (arredondado em cima, reto embaixo) */
     border-radius: 300px 300px 20px 20px; 
     z-index: 1;
-    box-shadow: inset 0 0 50px rgba(0,0,0,0.1); /* Sombra interna para dar profundidade */
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.1); 
 }
 
 .hero-image img {
     position: relative;
-    z-index: 2; /* Coloca a foto na frente do arco */
+    z-index: 2; 
     max-width: 90%;
-    max-height: 105%; /* Permite que ela saia um pouquinho pelo topo do arco */
+    max-height: 105%; 
     object-fit: contain;
     object-position: bottom;
-    /* Sombra na pessoa para separar do fundo */
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.4));
 }
-
 
 /* =========================================
    SEÇÃO ABOUT
