@@ -1,0 +1,236 @@
+/* =========================================
+   RESPONSIVIDADE: TABLETS (Telas até 992px)
+   ========================================= */
+@media (max-width: 992px) {
+
+    /* --- CABEÇALHO E MENU HAMBÚRGUER --- */
+    .hamburger-btn {
+        display: block; /* Mostra o ícone do menu no tablet */
+    }
+
+    /* Transformando o menu numa gaveta oculta */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Fica exatamente abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--header-bg);
+        flex-direction: column; /* Empilha os links */
+        padding: 2rem 5%;
+        gap: 1.5rem;
+        text-align: center;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+        
+        /* Preparação para a animação do JS */
+        transform: translateY(-150%); /* Esconde o menu jogando-o para cima */
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease-in-out;
+        z-index: 999;
+    }
+
+    /* Classe que o JavaScript vai adicionar quando clicar no botão ☰ */
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* --- SEÇÃO HOME (HERO) --- */
+    .hero {
+        min-height: auto; /* Remove a altura mínima para se adaptar ao conteúdo */
+        padding: 80px 5% 40px; /* Mais espaço no topo */
+    }
+
+    .hero-container {
+        flex-direction: column; /* Empilha o texto em cima e a foto embaixo */
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        order: 1; /* Garante que o texto venha primeiro */
+    }
+
+    /* Centralizando o conteúdo de texto */
+    .hero h1 {
+        font-size: 3rem; /* Reduz um pouco o tamanho da fonte */
+    }
+
+    .hero p {
+        margin: 0 auto 2.5rem auto; /* Centraliza o parágrafo */
+    }
+
+    .hero-image {
+        order: 2; /* A imagem vai para baixo do texto */
+        height: 450px; /* Reduz a altura para não ocupar a tela toda */
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 80%; /* A foto da Rochell fica um pouco menor */
+    }
+
+    .hero-image::before {
+        width: 90%; /* Ajusta a largura do arco roxo */
+        height: 95%; /* Ajusta a altura do arco roxo */
+    }
+
+    /* --- SEÇÃO ABOUT (SOBRE) --- */
+    .about-section {
+        padding: 60px 5%;
+    }
+
+    .about-section .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .about-image {
+        order: 1; 
+        max-width: 60%; 
+        margin: 0 auto;
+    }
+
+    .about-content {
+        order: 2;
+    }
+
+    .about-content h3 {
+        font-size: 2.2rem; 
+    }
+
+    .about-content p {
+        font-size: 1.05rem; 
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 650px; 
+    }
+
+    .badges {
+        justify-content: center; 
+        flex-wrap: wrap; 
+        margin-top: 1.5rem;
+    }
+
+    /* --- SEÇÃO WHY CHOOSE ME --- */
+    .why-section {
+        padding: 60px 5%;
+    }
+
+    .why-header {
+        margin-bottom: 3rem;
+    }
+
+    .why-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .why-grid {
+        gap: 1.5rem;
+    }
+
+    .why-card {
+        padding: 2rem;
+    }
+    
+    .why-card h3 {
+        font-size: 1.3rem;
+    }
+
+    /* --- SEÇÃO PRICING (PREÇOS) --- */
+    .pricing-section {
+        padding: 60px 5%; /* Reduz o espaçamento geral */
+    }
+
+    .pricing-header {
+        margin-bottom: 3rem;
+    }
+
+    .pricing-header h2 {
+        font-size: 2.2rem; /* Mantém a consistência tipográfica do tablet */
+    }
+
+    .pricing-cards {
+        flex-direction: column; /* Empilha os cartões de preço um embaixo do outro */
+        gap: 2.5rem; /* Cria um respiro agradável entre os planos */
+    }
+
+    .card {
+        width: 100%; /* O cartão ocupa o espaço disponível... */
+        max-width: 450px; /* ...até um limite de 450px para não ficar esticado demais */
+        margin: 0 auto; /* Centraliza o cartão perfeitamente na tela */
+    }
+
+    /* Ajuste crucial para o cartão "Popular" no Tablet */
+    .card.popular {
+        transform: none; /* Removemos o scale(1.05) para não quebrar a coluna */
+    }
+
+    .card.popular:hover {
+        /* No hover, ele apenas flutua para cima, sem tentar aumentar de tamanho */
+        transform: translateY(-10px); 
+    }
+
+    /* --- SEÇÃO TESTIMONIALS (REVIEWS) --- */
+    .testimonials-section {
+        padding: 60px 5%; /* Reduz o espaçamento superior e inferior para não ficar um "buraco" na tela */
+    }
+
+    .testimonials-header {
+        margin-bottom: 3rem; /* Aproxima o título dos cartões */
+    }
+
+    .testimonials-header h2 {
+        font-size: 2.2rem; /* Mantém a consistência de tamanho dos títulos no tablet */
+    }
+
+    .testimonials-grid {
+        gap: 2rem; /* Reduz um pouco o vão entre os cartões para eles se acomodarem melhor */
+    }
+
+    .testimonial-card {
+        padding: 2.5rem 2rem; /* Reduz levemente as margens internas do cartão para o texto respirar melhor */
+    }
+
+    .testimonial-card::before {
+        font-size: 10rem; /* Reduz um pouco a aspa gigante de fundo para não engolir o cartão menor */
+        top: -5px;
+        right: 15px;
+    }
+
+    .quote {
+        font-size: 1rem; /* Ajuste sutil na fonte da citação para caber perfeitamente na quebra de linha */
+        margin-bottom: 2rem;
+    }
+
+    /* --- SEÇÃO CALL TO ACTION FINAL (CTA) --- */
+    .cta-section {
+        padding: 80px 5%; /* Reduz o espaçamento exagerado no topo e base para telas médias */
+    }
+
+    .cta-container h2 {
+        font-size: 2.6rem; /* Reduz o título para evitar que a frase fique quebrada palavra por palavra */
+    }
+
+    .cta-container p {
+        font-size: 1.1rem; /* Ajuste sutil na fonte do subtítulo */
+        margin-bottom: 2.5rem;
+        padding: 0 20px; /* Evita que o texto encoste totalmente nas bordas laterais da tela */
+    }
+
+    .cta-container .cta-button {
+        font-size: 1.15rem; /* Ajuste proporcional no botão */
+        padding: 1rem 2.5rem;
+    }
+
+    /* --- RODAPÉ (FOOTER) --- */
+    .main-footer {
+        padding: 50px 5% 20px;
+    }
+
+    .footer-container {
+        gap: 2rem; /* Reduz um pouco o vão entre as colunas para que elas caibam melhor em 2 ou 3 colunas no tablet */
+    }
+}

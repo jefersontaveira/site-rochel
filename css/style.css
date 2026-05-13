@@ -103,8 +103,21 @@ header {
   color: #fff;
 }
 
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color var(--transition-speed);
+}
+.hamburger-btn:hover {
+    color: var(--primary-color);
+}
+
 /* =========================================
-   SEÇÃO HOME (HERO) - FUNDO COM TRANSIÇÃO PERFEITA
+   SEÇÃO HOME (HERO)
    ========================================= */
 .hero {
     min-height: 90vh;
@@ -112,7 +125,6 @@ header {
     align-items: center;
     padding: 0 5%;
     
-    /* APENAS a imagem de fundo, sem gradiente aqui */
     background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1920&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
@@ -306,6 +318,74 @@ header {
 }
 
 /* =========================================
+   SEÇÃO WHY CHOOSE ME
+   ========================================= */
+.why-section {
+    padding: 80px 5%;
+    background-color: var(--header-bg); 
+}
+
+.why-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.why-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-card {
+    background-color: var(--bg-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border-top: 4px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(123, 44, 191, 0.1);
+}
+
+.why-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 183, 3, 0.15); /* Fundo sutil ouro */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.why-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.why-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* =========================================
    SEÇÃO PRICING
    ========================================= */
 .pricing-section {
@@ -470,160 +550,201 @@ header {
 }
 
 /* =========================================
-   SEÇÃO WHY CHOOSE ME
+   SEÇÃO TESTIMONIALS (REVIEWS) - PREMIUM
    ========================================= */
-.why-section {
-    padding: 80px 5%;
-    background-color: var(--header-bg); /* Mantém a alternância de fundo para ritmo visual */
+.testimonials-section {
+    padding: 100px 5%;
+    background: linear-gradient(to bottom, var(--bg-color), var(--header-bg));
 }
 
-.why-header {
+.testimonials-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
-.why-header h2 {
-    font-size: 2.5rem;
+.testimonials-header h2 {
+    font-size: 2.8rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
-.why-grid {
+.testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: center; 
 }
 
-.why-card {
+/* O Cartão Base */
+.testimonial-card {
     background-color: var(--bg-color);
-    padding: 2.5rem;
-    border-radius: 15px;
-    border-top: 4px solid var(--primary-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 3rem 2.5rem;
+    border-radius: 20px; /* Bordas mais suaves e elegantes */
+    /* Sombra premium: muito espalhada e sutil */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(123, 44, 191, 0.05); /* Borda roxa quase invisível */
+    position: relative;
+    overflow: hidden;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
-.why-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(123, 44, 191, 0.1);
-}
-
-.why-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    background: rgba(255, 183, 3, 0.15); /* Fundo sutil ouro */
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-}
-
-.why-card h3 {
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.why-card p {
-    font-size: 1rem;
-    color: var(--text-color);
-    line-height: 1.7;
-    opacity: 0.9;
-}
-
-/* =========================================
-   SEÇÃO TESTIMONIALS (REVIEWS)
-   ========================================= */
-.testimonials-section {
-    padding: 80px 5%;
-    background-color: var(--bg-color); /* Alternando a cor de fundo da seção anterior */
-}
-
-.testimonials-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.testimonials-header h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.testimonial-card {
-    background-color: var(--header-bg);
-    border-left: 4px solid var(--accent-color);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform var(--transition-speed);
-}
-
+/* Efeito Hover Base */
 .testimonial-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(123, 44, 191, 0.08);
+}
+
+/* O GRANDE TRUQUE: Elevando o card do meio em telas grandes */
+@media (min-width: 992px) {
+    .testimonial-card:nth-child(2) {
+        transform: translateY(-30px);
+        border: 1px solid rgba(255, 183, 3, 0.3); /* Um leve toque de Ouro na borda */
+        box-shadow: 0 20px 50px rgba(123, 44, 191, 0.06);
+    }
+    .testimonial-card:nth-child(2):hover {
+        transform: translateY(-40px);
+    }
+}
+
+/* Marca d'água de Aspas Gigantes (Puro CSS) */
+.testimonial-card::before {
+    content: "”";
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 12rem;
+    line-height: 1;
+    color: var(--primary-color);
+    opacity: 0.04; /* Muito transparente para não atrapalhar a leitura */
+    font-family: Georgia, serif; /* Fonte serifada para a aspa ficar clássica */
+    pointer-events: none;
+}
+
+/* Tema Escuro para as Aspas */
+[data-theme="dark"] .testimonial-card::before {
+    opacity: 0.1;
 }
 
 .stars {
     color: var(--accent-color);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 4px;
+    /* Efeito de brilho suave nas estrelas */
+    text-shadow: 0 0 15px rgba(255, 183, 3, 0.4);
 }
 
 .quote {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-style: italic;
     color: var(--text-color);
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 2; /* Mantém o texto acima da aspa gigante */
 }
 
+/* Refinando o Avatar e Dados do Aluno */
 .student-info {
     display: flex;
     align-items: center;
     gap: 15px;
+    border-top: 1px solid rgba(123, 44, 191, 0.1); /* Linha divisória sutil */
+    padding-top: 1.5rem;
 }
 
 .student-avatar {
-    width: 45px;
-    height: 45px;
-    background-color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    /* Fundo com gradiente elegante em vez de cor sólida */
+    background: linear-gradient(135deg, var(--primary-color), #480ca8);
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
+    box-shadow: 0 5px 15px rgba(123, 44, 191, 0.3);
 }
 
 .student-details h4 {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-color);
-    margin-bottom: 2px;
+    font-weight: 700;
+    margin-bottom: 3px;
 }
 
 .student-details span {
     font-size: 0.85rem;
-    color: var(--text-color);
-    opacity: 0.7;
+    color: var(--primary-color); /* Cargo do aluno ganha o roxo da marca */
+    font-weight: 500;
+}
+
+/* =========================================
+   SEÇÃO CALL TO ACTION FINAL (CTA)
+   ========================================= */
+.cta-section {
+    position: relative;
+    padding: 120px 5%;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Cria o elegante efeito Parallax */
+    overflow: hidden;
+}
+
+/* Película Roxa para manter a identidade da Rochell e a legibilidade */
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Um gradiente que vai do roxo vibrante ao roxo escuro quase preto */
+    background: linear-gradient(135deg, rgba(123, 44, 191, 0.85), rgba(33, 11, 56, 0.95));
+    z-index: 1;
+}
+
+.cta-container {
+    position: relative;
+    z-index: 2; /* Mantém o conteúdo acima da película */
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ffffff; /* Texto sempre branco nesta seção */
+}
+
+.cta-container h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.cta-container p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.cta-container .cta-button {
+    font-size: 1.3rem;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(255, 183, 3, 0.3);
+    transition: all 0.3s ease-in-out; 
+}
+
+.cta-container .cta-button:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+    box-shadow: 0 15px 40px rgba(255, 183, 3, 0.5) !important;
+    background-color: #ffc32e !important;
 }
 
 /* =========================================

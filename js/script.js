@@ -32,7 +32,19 @@ themeToggle.addEventListener('click', () => {
 });
 
 
+// Lógica do Menu Hambúrguer
+const hamburgerBtn = document.querySelector('.hamburger-btn');
+const navLinks = document.querySelector('.nav-links');
 
+hamburgerBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    
+    if (navLinks.classList.contains('active')) {
+        hamburgerBtn.innerHTML = '✕';
+    } else {
+        hamburgerBtn.innerHTML = '☰';
+    }
+});
 
 
 /* =========================================
@@ -55,7 +67,7 @@ const translations = {
 
         // About
         about_title: "Meet Your Teacher",
-        about_name: "Rochell \"Kayla\" Furton",
+        about_name: "Rochell \ Furton",
         about_text_1: "With a degree in Office Administration and a proven track record as Top Agent of the Year in high-performance corporate environments, I bring a structured and highly efficient approach to English teaching.",
         about_text_2: "My experience in project coordination and customer support allows me to focus on what really matters: clear communication, problem-solving, and practical results for my students.",
         badge_1: "Award-Winning Communication",
@@ -105,6 +117,11 @@ const translations = {
         review_3_name: "Rafael T.",
         review_3_role: "Business Consultant",
 
+        // CTA Final
+        cta_final_title: "Ready to speak English fluently?",
+        cta_final_subtitle: "Don't let language barriers hold back your career. Join my classes and start speaking with confidence today.",
+        cta_final_btn: "Book Your First Class Now",
+
         // Footer
         footer_tagline: "Helping you stay organized and focused on your English journey.",
         footer_links_title: "Quick Links",
@@ -125,7 +142,7 @@ const translations = {
 
         // About
         about_title: "Conheça a sua Professora",
-        about_name: "Rochell \"Kayla\" Furton",
+        about_name: "Rochell \ Furton",
         about_text_1: "Com uma licenciatura em Administração de Escritórios e um histórico comprovado como Top Agent do Ano em ambientes corporativos de alta performance, trago uma abordagem estruturada e extremamente eficiente para o ensino de inglês.",
         about_text_2: "A minha experiência em coordenação de projetos e apoio ao cliente permite-me focar no que realmente importa: comunicação clara, resolução de problemas e resultados práticos para os meus alunos.",
         badge_1: "Comunicação Premiada",
@@ -175,6 +192,11 @@ const translations = {
         review_3_name: "Rafael T.",
         review_3_role: "Consultor de Negócios",
 
+        // CTA Final
+        cta_final_title: "Pronto para falar inglês fluentemente?",
+        cta_final_subtitle: "Não deixe a barreira do idioma travar a sua carreira. Junte-se às minhas aulas e comece a falar com confiança hoje mesmo.",
+        cta_final_btn: "Agende sua primeira aula agora",
+
         // Footer
         footer_tagline: "Ajudando a manter o foco e a organização na sua jornada com o inglês.",
         footer_links_title: "Links Rápidos",
@@ -195,7 +217,7 @@ const translations = {
 
         // About
         about_title: "Conoce a tu Profesora",
-        about_name: "Rochell \"Kayla\" Furton",
+        about_name: "Rochell \ Furton",
         about_text_1: "Con una licenciatura en Administración de Oficinas y un historial comprobado como Top Agent del Año en entornos corporativos de alto rendimiento, aporto un enfoque estructurado y altamente eficiente a la enseñanza del inglés.",
         about_text_2: "Mi experiencia en la coordinación de proyectos y atención al cliente me permite centrarme en lo que realmente importa: comunicación clara, resolución de problemas y resultados prácticos para mis alumnos.",
         badge_1: "Comunicación Premiada",
@@ -244,6 +266,11 @@ const translations = {
         review_3_text: "\"Gracias a las prácticas intensivas de conversación y al enfoque en la pronunciación, logré pasar mi entrevista de trabajo en inglés. ¡Su método directo hace toda la diferencia!\"",
         review_3_name: "Rafael T.",
         review_3_role: "Consultor de Negocios",
+
+        // CTA Final
+        cta_final_title: "¿Listo para hablar inglés con fluidez?",
+        cta_final_subtitle: "No dejes que la barrera del idioma frene tu carrera. Únete a mis clases y empieza a hablar con confianza hoy mismo.",
+        cta_final_btn: "Reserva tu primera clase ahora",
 
         // Footer
         footer_tagline: "Ayudándote a mantener el enfoque y la organización en tu viaje con el inglés.",

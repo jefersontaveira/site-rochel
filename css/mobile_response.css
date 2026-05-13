@@ -1,0 +1,194 @@
+/* =========================================
+   RESPONSIVIDADE: MOBILE / CELULARES (Telas até 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* --- GERAL: Redução de Espaçamentos --- */
+    /* Diminuímos o "respiro" entre as seções para dar mais dinamismo na rolagem do celular */
+    .about-section, 
+    .why-section, 
+    .pricing-section, 
+    .testimonials-section {
+        padding: 50px 5%;
+    }
+
+    /* --- CABEÇALHO E MENU --- */
+    header {
+        padding: 1rem 5%;
+    }
+    
+    .logo {
+        font-size: 1.25rem; /* Logo ligeiramente menor para não bater nos botões */
+    }
+    
+    .header-controls {
+        gap: 0.5rem; /* Aproxima os botões de idioma e tema */
+    }
+    
+    .lang-btn, .theme-btn {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.85rem; /* Botões menores para caberem junto do menu hambúrguer */
+    }
+
+    /* --- SEÇÃO HOME (HERO) --- */
+    .hero {
+        padding: 40px 5%;
+    }
+    
+    .hero-container {
+        gap: 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem; 
+    }
+    
+    .hero p {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-image {
+        display: none;
+    }
+    
+    
+    .cta-button {
+        width: 100%; 
+        padding: 1.1rem;
+        display: block;
+        text-align: center;
+    }
+
+/* --- ABOUT ME (SOBRE) --- */
+    .about-image {
+        max-width: 100%; /* Quebra a restrição de 60% do tablet */
+        width: 100%;
+    }
+
+    .about-image img {
+        width: 100%; /* Força a imagem a preencher todo o espaço da moldura */
+    }
+
+    .about-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    .badges {
+        flex-direction: column; 
+        gap: 10px;
+    }
+    
+    .badge {
+        font-size: 0.85rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* --- TÍTULOS GERAIS DAS SEÇÕES --- */
+    .why-header h2, 
+    .pricing-header h2, 
+    .testimonials-header h2 {
+        font-size: 2rem;
+    }
+    
+    .why-header, 
+    .pricing-header, 
+    .testimonials-header {
+        margin-bottom: 2.5rem;
+    }
+
+    /* --- WHY CHOOSE ME (POR QUE ME ESCOLHER) --- */
+    .why-card {
+        padding: 1.5rem;
+        text-align: center; /* Centraliza o conteúdo dos cartões no mobile */
+    }
+    
+    .why-icon {
+        margin: 0 auto 1.5rem auto; /* Centraliza o ícone */
+        width: 50px;
+        height: 50px;
+    }
+    
+    .why-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* --- PRICING (PREÇOS) --- */
+    .card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .price {
+        font-size: 3rem;
+    }
+    
+    /* Ajuste da faixa lateral para não vazar a tela pequena */
+    .badge-popular {
+        top: 20px;
+        right: -45px;
+        padding: 5px 40px;
+        font-size: 0.75rem;
+    }
+
+    /* --- TESTIMONIALS (REVIEWS) --- */
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* A aspa precisa ficar muito sutil para não engolir o texto num espaço pequeno */
+    .testimonial-card::before {
+        font-size: 7rem; 
+        top: 0;
+        right: 10px;
+        opacity: 0.03;
+    }
+    
+    .quote {
+        font-size: 0.95rem;
+    }
+
+    /* --- CALL TO ACTION FINAL --- */
+    .cta-section {
+        /* CRUCIAL: Desativa o parallax. O mobile tem dificuldade em renderizar fundos fixos enquanto rola a página */
+        background-attachment: scroll; 
+        padding: 60px 5%;
+    }
+    
+    .cta-container h2 {
+        font-size: 2.2rem;
+    }
+    
+    .cta-container p {
+        font-size: 1rem;
+        padding: 0;
+    }
+    
+    /* Botão Final Full Width (Thumb-friendly) */
+    .cta-container .cta-button {
+        width: 100%; 
+        font-size: 1.1rem;
+        padding: 1.1rem;
+    }
+
+    /* --- RODAPÉ (FOOTER) --- */
+    .main-footer {
+        padding: 40px 5% 20px;
+        text-align: center; /* No mobile, o rodapé fica muito mais elegante totalmente centralizado */
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr; /* Força 1 coluna única, derrubando o auto-fit do desktop */
+        gap: 2.5rem;
+    }
+    
+    .footer-brand .logo {
+        display: flex;
+        justify-content: center; /* Centraliza a logo no topo do footer */
+    }
+}
