@@ -1,35 +1,33 @@
 /* =========================================
    RESPONSIVIDADE: TABLETS (Telas até 992px)
    ========================================= */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
 
     /* --- CABEÇALHO E MENU HAMBÚRGUER --- */
     .hamburger-btn {
-        display: block; /* Mostra o ícone do menu no tablet */
+        display: block;
     }
 
-    /* Transformando o menu numa gaveta oculta */
     .nav-links {
         position: absolute;
-        top: 100%; /* Fica exatamente abaixo do header */
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--header-bg);
-        flex-direction: column; /* Empilha os links */
+        flex-direction: column;
         padding: 2rem 5%;
         gap: 1.5rem;
         text-align: center;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
         
         /* Preparação para a animação do JS */
-        transform: translateY(-150%); /* Esconde o menu jogando-o para cima */
+        transform: translateY(-150%);
         opacity: 0;
         visibility: hidden;
         transition: all 0.4s ease-in-out;
         z-index: 999;
     }
 
-    /* Classe que o JavaScript vai adicionar quando clicar no botão ☰ */
     .nav-links.active {
         transform: translateY(0);
         opacity: 1;
@@ -38,42 +36,38 @@
 
     /* --- SEÇÃO HOME (HERO) --- */
     .hero {
-        min-height: auto; /* Remove a altura mínima para se adaptar ao conteúdo */
-        padding: 80px 5% 40px; /* Mais espaço no topo */
+        min-height: auto;
+        padding: 80px 5% 40px;
     }
 
     .hero-container {
-        flex-direction: column; /* Empilha o texto em cima e a foto embaixo */
+        flex-direction: column;
         text-align: center;
         gap: 3rem;
     }
 
     .hero-content {
-        order: 1; /* Garante que o texto venha primeiro */
+        order: 1; 
     }
 
-    /* Centralizando o conteúdo de texto */
     .hero h1 {
-        font-size: 3rem; /* Reduz um pouco o tamanho da fonte */
+        font-size: 3rem;
+        text-align: center;
     }
 
     .hero p {
-        margin: 0 auto 2.5rem auto; /* Centraliza o parágrafo */
+        margin: 0 auto 2.5rem auto; 
+        text-align: center;
+    }
+
+    .cta-button {
+        display: block; 
+        width: fit-content; 
+        margin: 0 auto; 
     }
 
     .hero-image {
-        order: 2; /* A imagem vai para baixo do texto */
-        height: 450px; /* Reduz a altura para não ocupar a tela toda */
-        width: 100%;
-    }
-
-    .hero-image img {
-        max-width: 80%; /* A foto da Rochell fica um pouco menor */
-    }
-
-    .hero-image::before {
-        width: 90%; /* Ajusta a largura do arco roxo */
-        height: 95%; /* Ajusta a altura do arco roxo */
+        display: none;
     }
 
     /* --- SEÇÃO ABOUT (SOBRE) --- */
@@ -115,6 +109,11 @@
     }
 
     /* --- SEÇÃO WHY CHOOSE ME --- */
+
+    .why-grid .why-card:last-child {
+        display: none;
+    }
+
     .why-section {
         padding: 60px 5%;
     }
@@ -139,89 +138,115 @@
         font-size: 1.3rem;
     }
 
-    /* --- SEÇÃO PRICING (PREÇOS) --- */
-    .pricing-section {
-        padding: 60px 5%; /* Reduz o espaçamento geral */
-    }
 
-    .pricing-header {
-        margin-bottom: 3rem;
-    }
 
-    .pricing-header h2 {
-        font-size: 2.2rem; /* Mantém a consistência tipográfica do tablet */
-    }
-
+/* --- SEÇÃO PRICING (PREÇOS) - 3 COLUNAS NO TABLET --- */
     .pricing-cards {
-        flex-direction: column; /* Empilha os cartões de preço um embaixo do outro */
-        gap: 2.5rem; /* Cria um respiro agradável entre os planos */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        overflow-x: visible;
+        padding-bottom: 0; 
     }
 
     .card {
-        width: 100%; /* O cartão ocupa o espaço disponível... */
-        max-width: 450px; /* ...até um limite de 450px para não ficar esticado demais */
-        margin: 0 auto; /* Centraliza o cartão perfeitamente na tela */
+        width: 33%;
+        min-width: 0;
+        padding: 1.5rem 1rem;
     }
 
-    /* Ajuste crucial para o cartão "Popular" no Tablet */
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .price span {
+        font-size: 1.2rem;
+    }
+
+    .features li {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .plan-btn, .card.popular .cta-btn {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
     .card.popular {
-        transform: none; /* Removemos o scale(1.05) para não quebrar a coluna */
+        transform: scale(1.03);
     }
 
     .card.popular:hover {
-        /* No hover, ele apenas flutua para cima, sem tentar aumentar de tamanho */
-        transform: translateY(-10px); 
+        transform: scale(1.03) translateY(-10px); 
+    }
+
+    .badge-popular {
+        font-size: 0.7rem;
+        padding: 5px 30px;
+        right: -30px;
+        top: 20px;
     }
 
     /* --- SEÇÃO TESTIMONIALS (REVIEWS) --- */
+
+    .testimonials-grid .testimonial-card:nth-child(2) {
+        display: none;
+    }
+
     .testimonials-section {
-        padding: 60px 5%; /* Reduz o espaçamento superior e inferior para não ficar um "buraco" na tela */
+        padding: 60px 5%;
     }
 
     .testimonials-header {
-        margin-bottom: 3rem; /* Aproxima o título dos cartões */
+        margin-bottom: 3rem;
     }
 
     .testimonials-header h2 {
-        font-size: 2.2rem; /* Mantém a consistência de tamanho dos títulos no tablet */
+        font-size: 2.2rem;
     }
 
     .testimonials-grid {
-        gap: 2rem; /* Reduz um pouco o vão entre os cartões para eles se acomodarem melhor */
+        gap: 2rem;
     }
 
     .testimonial-card {
-        padding: 2.5rem 2rem; /* Reduz levemente as margens internas do cartão para o texto respirar melhor */
+        padding: 2.5rem 2rem;
     }
 
     .testimonial-card::before {
-        font-size: 10rem; /* Reduz um pouco a aspa gigante de fundo para não engolir o cartão menor */
+        font-size: 10rem; 
         top: -5px;
         right: 15px;
     }
 
     .quote {
-        font-size: 1rem; /* Ajuste sutil na fonte da citação para caber perfeitamente na quebra de linha */
+        font-size: 1rem;
         margin-bottom: 2rem;
     }
 
     /* --- SEÇÃO CALL TO ACTION FINAL (CTA) --- */
     .cta-section {
-        padding: 80px 5%; /* Reduz o espaçamento exagerado no topo e base para telas médias */
+        padding: 80px 5%;
     }
 
     .cta-container h2 {
-        font-size: 2.6rem; /* Reduz o título para evitar que a frase fique quebrada palavra por palavra */
-    }
+        font-size: 2.6rem;
 
     .cta-container p {
-        font-size: 1.1rem; /* Ajuste sutil na fonte do subtítulo */
+        font-size: 1.1rem;
         margin-bottom: 2.5rem;
-        padding: 0 20px; /* Evita que o texto encoste totalmente nas bordas laterais da tela */
+        padding: 0 20px;
     }
 
     .cta-container .cta-button {
-        font-size: 1.15rem; /* Ajuste proporcional no botão */
+        font-size: 1.15rem;
         padding: 1rem 2.5rem;
     }
 
@@ -231,6 +256,6 @@
     }
 
     .footer-container {
-        gap: 2rem; /* Reduz um pouco o vão entre as colunas para que elas caibam melhor em 2 ou 3 colunas no tablet */
+        gap: 2rem;
     }
 }

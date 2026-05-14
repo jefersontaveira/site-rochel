@@ -4,7 +4,6 @@
 @media (max-width: 768px) {
 
     /* --- GERAL: Redução de Espaçamentos --- */
-    /* Diminuímos o "respiro" entre as seções para dar mais dinamismo na rolagem do celular */
     .about-section, 
     .why-section, 
     .pricing-section, 
@@ -18,16 +17,16 @@
     }
     
     .logo {
-        font-size: 1.25rem; /* Logo ligeiramente menor para não bater nos botões */
+        font-size: 1.25rem;
     }
     
     .header-controls {
-        gap: 0.5rem; /* Aproxima os botões de idioma e tema */
+        gap: 0.5rem;
     }
     
     .lang-btn, .theme-btn {
         padding: 0.3rem 0.5rem;
-        font-size: 0.85rem; /* Botões menores para caberem junto do menu hambúrguer */
+        font-size: 0.85rem;
     }
 
     /* --- SEÇÃO HOME (HERO) --- */
@@ -62,12 +61,12 @@
 
 /* --- ABOUT ME (SOBRE) --- */
     .about-image {
-        max-width: 100%; /* Quebra a restrição de 60% do tablet */
+        max-width: 100%; 
         width: 100%;
     }
 
     .about-image img {
-        width: 100%; /* Força a imagem a preencher todo o espaço da moldura */
+        width: 100%; 
     }
 
     .about-content h3 {
@@ -104,6 +103,10 @@
 
     /* --- WHY CHOOSE ME (POR QUE ME ESCOLHER) --- */
 
+    .why-grid .why-card:last-child {
+        display: block;
+    }
+
     .why-grid {
         grid-template-columns: 1fr; 
     }
@@ -124,24 +127,47 @@
         height: 24px;
     }
 
-    /* --- PRICING (PREÇOS) --- */
+/* --- PRICING (PREÇOS) - EMPILHADO NO MOBILE --- */
+    .pricing-cards {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 2rem;
+        overflow-x: visible; 
+        scroll-snap-type: none; 
+    }
+
     .card {
-        padding: 2rem 1.5rem;
+        width: 100%; 
+        max-width: 360px;
+        min-width: 0;
+        padding: 2.5rem 2rem;
+    }
+    
+    .card.popular {
+        transform: scale(1.02);
+    }
+
+    .card.popular:hover {
+        transform: scale(1.02) translateY(-5px); 
     }
     
     .price {
-        font-size: 3rem;
+        font-size: 3.5rem; 
     }
     
-    /* Ajuste da faixa lateral para não vazar a tela pequena */
     .badge-popular {
         top: 20px;
-        right: -45px;
+        right: -35px;
         padding: 5px 40px;
         font-size: 0.75rem;
     }
 
     /* --- TESTIMONIALS (REVIEWS) --- */
+
+    .testimonials-grid .testimonial-card:nth-child(2) {
+        display: block;
+    }
 
     .testimonials-grid{
         grid-template-columns: 1fr; 
@@ -151,7 +177,6 @@
         padding: 2rem 1.5rem;
     }
     
-    /* A aspa precisa ficar muito sutil para não engolir o texto num espaço pequeno */
     .testimonial-card::before {
         font-size: 7rem; 
         top: 0;
@@ -165,7 +190,6 @@
 
     /* --- CALL TO ACTION FINAL --- */
     .cta-section {
-        /* CRUCIAL: Desativa o parallax. O mobile tem dificuldade em renderizar fundos fixos enquanto rola a página */
         background-attachment: scroll; 
         padding: 60px 5%;
     }
@@ -179,7 +203,6 @@
         padding: 0;
     }
     
-    /* Botão Final Full Width (Thumb-friendly) */
     .cta-container .cta-button {
         width: 100%; 
         font-size: 1.1rem;
@@ -189,16 +212,16 @@
     /* --- RODAPÉ (FOOTER) --- */
     .main-footer {
         padding: 40px 5% 20px;
-        text-align: center; /* No mobile, o rodapé fica muito mais elegante totalmente centralizado */
+        text-align: center; 
     }
     
     .footer-container {
-        grid-template-columns: 1fr; /* Força 1 coluna única, derrubando o auto-fit do desktop */
+        grid-template-columns: 1fr; 
         gap: 2.5rem;
     }
     
     .footer-brand .logo {
         display: flex;
-        justify-content: center; /* Centraliza a logo no topo do footer */
+        justify-content: center;
     }
 }

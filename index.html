@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/tablet_response.css">
     <link rel="stylesheet" href="css/mobile_response.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -42,12 +43,20 @@
         <section id="home" class="hero">
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1 data-i18n="hero_title">Master English with Confidence</h1>
-                    <p data-i18n="hero_subtitle">Personalized lessons to help you speak fluently, organized by a top-rated communication expert.</p>
-                    <button class="cta-button" data-i18n="hero_cta">Book Your First Class</button>
+                    <h1 data-i18n="hero_title" data-aos="fade-up" data-aos-duration="1000">
+                        Master English with Confidence
+                    </h1>
+                    
+                    <p data-i18n="hero_subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        Personalized lessons to help you speak fluently, organized by a top-rated communication expert.
+                    </p>
+                    
+                    <div data-aos="zoom-in" data-aos-delay="400" data-aos-duration="800">
+                        <button class="cta-button" data-i18n="hero_cta">Book Your First Class</button>
+                    </div>
                 </div>
                 
-                <div class="hero-image">
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200">
                     <img src="img/imagem 1.png" alt="Rochell Furton - English Teacher">
                 </div>
             </div>
@@ -55,39 +64,57 @@
 
         <section id="about" class="about-section">
             <div class="container">
-                <div class="about-image">
+                
+                <div class="about-image" data-aos="fade-in" data-aos-duration="1000">
                     <div class="image-wrapper">
                         <img src="img/imagem 4.jpeg" alt="Rochell Furton">
                     </div>
                 </div>
+                
                 <div class="about-content">
-                    <h2 data-i18n="about_title">Meet Your Teacher</h2>
-                    <h3 data-i18n="about_name">Rochell Furton</h3>
-                    <p data-i18n="about_text_1">
+                    <h2 data-i18n="about_title" data-aos="fade-up" data-aos-duration="800">
+                        Meet Your Teacher
+                    </h2>
+                    
+                    <h3 data-i18n="about_name" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                        Rochell Furton
+                    </h3>
+                    
+                    <p data-i18n="about_text_1" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
                         With a degree in <strong>Office Administration</strong> and a proven track record as <strong>Top Agent of the Year</strong> in high-performance corporate environments, I bring a structured and highly efficient approach to English teaching.
                     </p>
-                    <p data-i18n="about_text_2">
+                    
+                    <p data-i18n="about_text_2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                         My experience in project coordination and customer support allows me to focus on what really matters: clear communication, problem-solving, and practical results for my students.
                     </p>
-                    <div class="badges">
+                    
+                    <div class="badges" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
                         <span class="badge" data-i18n="badge_1">Award-Winning Communication</span>
                         <span class="badge" data-i18n="badge_2">Certified Professional</span>
                     </div>
                     <br>
-                    <button class="cta-button" data-i18n="hero_cta">Book Your First Class</button>
+                    
+                    <div data-aos="fade-in" data-aos-delay="300" data-aos-duration="800">
+                        <button class="cta-button" data-i18n="hero_cta">Book Your First Class</button>
+                    </div>
                 </div>
+                
             </div>
         </section>
 
         <section id="why-choose" class="why-section">
             <div class="why-header">
-                <h2 data-i18n="why_title">Why Choose Me?</h2>
-                <p data-i18n="why_subtitle">More than just English. I bring structure, patience, and proven communication skills to every lesson.</p>
+                <h2 data-i18n="why_title" data-aos="fade-up" data-aos-duration="800">
+                    Why Choose Me?
+                </h2>
+                <p data-i18n="why_subtitle" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    More than just English. I bring structure, patience, and proven communication skills to every lesson.
+                </p>
             </div>
             
             <div class="why-grid">
                 
-                <div class="why-card">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                     <div class="why-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
@@ -101,7 +128,7 @@
                     </p>
                 </div>
 
-                <div class="why-card">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
                     <div class="why-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
@@ -113,7 +140,7 @@
                     </p>
                 </div>
 
-                <div class="why-card">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
                     <div class="why-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -132,13 +159,17 @@
 
         <section id="pricing" class="pricing-section">
             <div class="pricing-header">
-                <h2 data-i18n="pricing_title">Invest in Your Fluency</h2>
-                <p data-i18n="pricing_subtitle">Choose the perfect plan for your schedule and learning pace.</p>
+                <h2 data-i18n="pricing_title" data-aos="fade-down" data-aos-duration="800">
+                    Invest in Your Fluency
+                </h2>
+                <p data-i18n="pricing_subtitle" data-aos="fade-in" data-aos-delay="100" data-aos-duration="800">
+                    Choose the perfect plan for your schedule and learning pace.
+                </p>
             </div>
             
             <div class="pricing-cards">
                 
-                <div class="card">
+                <div class="card" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
                     <h3 data-i18n="plan_1_title">Quick Practice</h3>
                     <div class="price"><span>$</span>5</div>
                     <p class="duration" data-i18n="plan_1_duration">30 minutes</p>
@@ -150,7 +181,7 @@
                     <button class="plan-btn" data-i18n="btn_choose">Choose Plan</button>
                 </div>
 
-                <div class="card popular">
+                <div class="card popular" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="800">
                     <div class="badge-popular" data-i18n="badge_popular">Most Popular</div>
                     <h3 data-i18n="plan_2_title">Standard Lesson</h3>
                     <div class="price"><span>$</span>7</div>
@@ -163,7 +194,7 @@
                     <button class="plan-btn cta-btn" data-i18n="btn_choose">Choose Plan</button>
                 </div>
 
-                <div class="card">
+                <div class="card" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
                     <h3 data-i18n="plan_3_title">Deep Dive</h3>
                     <div class="price"><span>$</span>10</div>
                     <p class="duration" data-i18n="plan_3_duration">1 hour 30 mins</p>
@@ -180,13 +211,17 @@
 
         <section id="testimonials" class="testimonials-section">
             <div class="testimonials-header">
-                <h2 data-i18n="reviews_title">What My Students Say</h2>
-                <p data-i18n="reviews_subtitle">Real results from people who improved their English with me.</p>
+                <h2 data-i18n="reviews_title" data-aos="fade-up" data-aos-duration="800">
+                    What My Students Say
+                </h2>
+                <p data-i18n="reviews_subtitle" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    Real results from people who improved their English with me.
+                </p>
             </div>
 
             <div class="testimonials-grid">
                 
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="flip-up" data-aos-delay="200" data-aos-duration="800">
                     <div class="stars">★★★★★</div>
                     <p class="quote" data-i18n="review_1_text">
                         "As aulas da Rochell são incríveis! Eu tinha muito medo de falar em inglês, mas ela é super paciente e cria um ambiente onde me sinto seguro para errar e aprender. Minha fluência melhorou em semanas."
@@ -200,7 +235,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="flip-up" data-aos-delay="300" data-aos-duration="800">
                     <div class="stars">★★★★★</div>
                     <p class="quote" data-i18n="review_2_text">
                         "A organização e didática dela são impressionantes. O plano de aula é sempre bem estruturado e focado nas minhas necessidades reais, principalmente para o vocabulário do dia a dia no trabalho."
@@ -214,7 +249,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="flip-up" data-aos-delay="400" data-aos-duration="800">
                     <div class="stars">★★★★★</div>
                     <p class="quote" data-i18n="review_3_text">
                         "Graças aos treinos intensivos de conversação e foco na pronúncia, consegui passar na minha entrevista de emprego em inglês. O método direto e focado dela faz toda a diferença!"
@@ -234,9 +269,19 @@
         <section id="cta-final" class="cta-section">
             <div class="cta-overlay"></div>
             <div class="cta-container">
-                <h2 data-i18n="cta_final_title">Ready to speak English fluently?</h2>
-                <p data-i18n="cta_final_subtitle">Don't let language barriers hold back your career. Join my classes and start speaking with confidence today.</p>
-                <button class="cta-button" data-i18n="cta_final_btn">Book Your First Class Now</button>
+                
+                <h2 data-i18n="cta_final_title" data-aos="fade-up" data-aos-duration="800">
+                    Ready to speak English fluently?
+                </h2>
+                
+                <p data-i18n="cta_final_subtitle" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    Don't let language barriers hold back your career. Join my classes and start speaking with confidence today.
+                </p>
+                
+                <div data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
+                    <button class="cta-button" data-i18n="cta_final_btn">Book Your First Class Now</button>
+                </div>
+                
             </div>
         </section>
 
@@ -287,7 +332,17 @@
         </div>
     </footer>
 
+    
     <script src="js/script.js"></script>
     <script src="js/effects.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Isso "liga" o motor da biblioteca com configurações premium
+        AOS.init({
+            once: true, /* A animação acontece só uma vez ao carregar */
+            offset: 50, /* Dispara quando o elemento entra 50px na tela */
+            easing: 'ease-out-cubic', /* A curva matemática suave e tecnológica */
+        });
+    </script>
 </body>
 </html>
